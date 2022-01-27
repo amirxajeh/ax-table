@@ -1,8 +1,32 @@
 import React, { Component } from "react";
+import { IData } from "./@types/Data";
+
+import { IAXTableProps as IProps } from "./@types/Props";
 
 import './AXTable.scss'
+import Tr from "./Tr/Tr";
 
-class AXTable extends Component {
+class AXTable extends Component<IProps> {
+
+  prepareHead() {
+
+    const labels: IData = {}
+    for (const column of this.props.columns) {
+      labels[column.field] = column.field
+    }
+
+    return <Tr columns={this.props.columns} data={labels}></Tr>
+  }
+
+
+  prepareBody() {
+    const bodyElements: JSX.Element[] = []
+    for (const item of this.props.items) {
+      bodyElements.push(<Tr columns={this.props.columns} data={item}></Tr>)
+    }
+
+    return { bodyElements }
+  }
 
 
   render() {
@@ -11,32 +35,12 @@ class AXTable extends Component {
         <table className="ax-table">
 
           <thead className="table-head">
-            <tr >
-              <td>name</td>
-              <td>age</td>
-              <td>family</td>
-            </tr>
-
+            {this.prepareHead()}
           </thead>
 
+
           <tbody className="table-body">
-            <tr>
-              <td>amir</td>
-              <td>23</td>
-              <td>xajeh</td>
-            </tr>
-
-            <tr>
-              <td>sara</td>
-              <td>25</td>
-              <td>xajeh</td>
-            </tr>
-
-            <tr>
-              <td>coco</td>
-              <td>3</td>
-              <td>chanel</td>
-            </tr>
+            {this.prepareBody()}
           </tbody>
 
         </table>
