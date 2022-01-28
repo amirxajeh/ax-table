@@ -1,11 +1,21 @@
 import React, { Component } from "react";
 
-class Td extends Component {
+import { ITableDataProps as IProps } from "../@types/Td";
+
+class Td extends Component<IProps> {
 
 
   render() {
+
+    let children = this.props.children
+    if (this.props.search) {
+      children = <input
+        onChange={(e) => this.props.onSearchHandler!(this.props.field, e.target.value)}
+        placeholder="search ..." />
+    }
+
     return (
-      <td>{this.props.children}</td>
+      <td className={`${this.props.search && 'search-input'}`}>{children}</td>
     )
   }
 }

@@ -25,7 +25,8 @@ function App() {
     },
     {
       field: 'age',
-      label: 'Age'
+      label: 'Age',
+      searchable: true
     }
   ])
 

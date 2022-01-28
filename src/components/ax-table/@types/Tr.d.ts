@@ -5,4 +5,5 @@ export interface ITableRow {
   columns: IColumn[]
   data: IData
   search?: boolean
+  onSearchHandler?: (key: string, value: string) => void
 }

@@ -8,7 +8,13 @@ class Tr extends Component<IProps> {
   prepareCells = () => {
 
     return this.props.columns.map(column => {
-      return <Td key={this.props.data[column.field]}>{this.props.data[column.field]}</Td>
+      return <Td
+        field={column.field}
+        onSearchHandler={this.props.onSearchHandler}
+        search={this.props.search && column.searchable}
+        key={this.props.data[column.field]}>
+        {this.props.search ? '' : this.props.data[column.field]}
+      </Td>
     })
 
   }
