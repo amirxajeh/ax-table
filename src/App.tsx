@@ -16,7 +16,8 @@ function App() {
   const [columns, setColumns] = useState<IColumn[]>([
     {
       field: 'name',
-      label: 'Name'
+      label: 'Name',
+      searchable: true
     },
     {
       field: 'lastname',

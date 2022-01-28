@@ -15,17 +15,46 @@ class AXTable extends Component<IProps> {
       labels[column.field] = column.field
     }
 
-    return <Tr columns={this.props.columns} data={labels}></Tr>
+    let searchInput: JSX.Element | null = null
+    if (this.hasSearchInput) {
+      searchInput = <Tr
+        key='search-header'
+        search={true}
+        columns={this.props.columns}
+        data={labels}></Tr>
+    }
+
+    return <>
+      <Tr
+        columns={this.props.columns}
+        data={labels}></Tr>
+      {searchInput}
+    </>
   }
 
 
   prepareBody() {
+    let counter = 0
     const bodyElements: JSX.Element[] = []
     for (const item of this.props.items) {
-      bodyElements.push(<Tr columns={this.props.columns} data={item}></Tr>)
+      bodyElements.push(
+        <Tr
+          columns={this.props.columns}
+          data={item}
+          key={'data' + counter++}>
+        </Tr>
+      )
     }
 
-    return { bodyElements }
+    return bodyElements
+  }
+
+
+  get hasSearchInput() {
+    for (const column of this.props.columns) {
+      if (column.searchable) return true
+    }
+    return false
   }
 
 
