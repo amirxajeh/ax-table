@@ -30,7 +30,7 @@ function App() {
       field: 'age',
       label: 'Age',
       searchable: true,
-      sort: true
+      sort: false
 
     }
   ])

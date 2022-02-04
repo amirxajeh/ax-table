@@ -8,3 +8,4 @@ export interface ITableRow {
   onSearchHandler?: (key: string, value: string) => void
   head?: boolean
 }
+

@@ -4,3 +4,7 @@ export interface ITableDataProps {
   onSearchHandler?: (key: string, value: string) => void
   sort?: boolean
 }
+
+export interface ITableDataState {
+  sortType?: 'default' | 'asce' | 'desc'
+}
