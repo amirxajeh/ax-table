@@ -31,7 +31,20 @@ class Td extends Component<IProps, IState> {
   }
 
   onSortHandler = () => {
-    console.log('sort')
+    let newSortType: IState['sortType']
+    if (this.state.sortType === 'default') {
+      newSortType = 'asce'
+    } else if (this.state.sortType === 'asce') {
+      newSortType = 'desc'
+    } else if (this.state.sortType === 'desc') {
+      newSortType = 'default'
+    }
+
+    this.setState({
+      sortType: newSortType
+    })
+
+
   }
 
   get sortIcon() {
@@ -53,7 +66,7 @@ class Td extends Component<IProps, IState> {
     if (this.props.search) {
       children = <input
         onChange={(e) => this.props.onSearchHandler!(this.props.field, e.target.value)}
-        placeholder="search ..." />
+        placeholder={`search by ${this.props.field.toLowerCase()}`} />
     }
 
     return (

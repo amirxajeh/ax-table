@@ -1,12 +1,11 @@
 .td {
-  user-select: none;
-
   svg {
     fill: white;
   }
 }
 
 .td-sort {
+  user-select: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
