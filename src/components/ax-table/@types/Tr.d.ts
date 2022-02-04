@@ -6,4 +6,5 @@ export interface ITableRow {
   data: IData
   search?: boolean
   onSearchHandler?: (key: string, value: string) => void
+  head?: boolean
 }

@@ -12,6 +12,7 @@ class Tr extends Component<IProps> {
         field={column.field}
         onSearchHandler={this.props.onSearchHandler}
         search={this.props.search && column.searchable}
+        sort={this.props.head && column.sort}
         key={this.props.data[column.field]}>
         {this.props.search ? '' : this.props.data[column.field]}
       </Td>

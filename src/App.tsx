@@ -17,16 +17,21 @@ function App() {
     {
       field: 'name',
       label: 'Name',
-      searchable: true
+      searchable: true,
+      sort: true
     },
     {
       field: 'lastname',
-      label: 'Last Name'
+      label: 'Last Name',
+      sort: true
+
     },
     {
       field: 'age',
       label: 'Age',
-      searchable: true
+      searchable: true,
+      sort: true
+
     }
   ])
 
@@ -45,6 +50,11 @@ function App() {
       name: 'coco',
       lastname: 'chanel',
       age: 3
+    },
+    {
+      name: 'fateme',
+      lastname: 'ebrahimzadeh',
+      age: 21
     }
   ])
 

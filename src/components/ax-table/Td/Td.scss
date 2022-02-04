@@ -1,0 +1,12 @@
+.td {
+  svg {
+    fill: white;
+  }
+}
+
+.td-sort {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}

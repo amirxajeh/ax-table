@@ -3,4 +3,5 @@ export interface IColumn {
   label?: string
   type?: 'checkbox'
   searchable?: boolean
+  sort?: boolean
 }

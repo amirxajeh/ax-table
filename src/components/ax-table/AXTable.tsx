@@ -58,11 +58,11 @@ class AXTable extends Component<IProps, IState> {
     return <>
       <Tr
         columns={this.props.columns}
+        head={true}
         data={labels}></Tr>
       {searchInput}
     </>
   }
-
 
   prepareBody() {
     let counter = 0
