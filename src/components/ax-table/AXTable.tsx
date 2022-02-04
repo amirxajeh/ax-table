@@ -58,6 +58,7 @@ class AXTable extends Component<IProps, IState> {
     return <>
       <Tr
         columns={this.props.columns}
+        onSortHandler={this.onSortHandler}
         head={true}
         data={labels}></Tr>
       {searchInput}
@@ -106,6 +107,10 @@ class AXTable extends Component<IProps, IState> {
 
     return foundedItems
 
+  }
+
+  onSortHandler(key: string, sortType: any) {
+    console.log(key, sortType)
   }
 
   get hasSearchInput() {

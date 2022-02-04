@@ -10,6 +10,7 @@ class Tr extends Component<IProps> {
     return this.props.columns.map(column => {
       return <Td
         field={column.field}
+        onSortHandler={this.props.onSortHandler}
         onSearchHandler={this.props.onSearchHandler}
         search={this.props.search && column.searchable}
         sort={this.props.head && column.sort}

@@ -43,7 +43,7 @@ class Td extends Component<IProps, IState> {
     this.setState({
       sortType: newSortType
     })
-
+    this.props.onSortHandler && this.props.onSortHandler(this.props.field, newSortType)
 
   }
 
